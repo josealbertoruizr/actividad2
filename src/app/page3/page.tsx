@@ -75,31 +75,45 @@ export function FormsLogin() {
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
+                        name="name"
                         placeholder="Nombre"
                         value={formData.name}
                         onChange={handleChange}
                         className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
                     />
-                    {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                   
                     <input
                         type="email"
+                        name="email"
                         placeholder="Correo"
                         value={formData.email}
                         onChange={handleChange}    
                         className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
                     />
-                    {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                    
                     <input
                         type="password"
+                        name="password"
                         placeholder="Contraseña"
                         value={formData.password}
                         onChange={handleChange}
                         className="w-full p-3 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 mb-3"
                     />
+
+                    {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}  
+                    {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
                     {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+                   
                     <div className="flex justify-center">
-                        <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Registrarse</button>
+                        <button
+                            type="submit"
+                            className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+                        >
+                            Registrarse
+                        </button>
                     </div>  
+
+
 
                     {successMessage && <p className="text-green-600 font-semibold mt-3 text-center">{successMessage}</p>}
                 </form>
