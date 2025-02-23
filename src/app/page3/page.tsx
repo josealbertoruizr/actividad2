@@ -70,6 +70,13 @@ export function FormsLogin() {
 
     return (
         <div className="flex flex-col items-center justify-center min-h-screen ">
+
+            {successMessage && (
+                <h1 className="text-3xl font-bold text-green-600 mb-4">
+                    {successMessage}
+                </h1>
+            )}
+
             <div className="w-full max-w-sm bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-xl font-semibold text-center text-gray-700 mb-4">Registro</h2>
                 <form onSubmit={handleSubmit}>
