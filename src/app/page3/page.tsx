@@ -28,7 +28,7 @@ export function FormsLogin() {
     // Validar formulario
     const validateForm = () => {
         let isValid = true;
-        let newErrors = { name: "", email: "", password: "" };
+        const newErrors = { name: "", email: "", password: "" };
 
         // Validar nombre (no vacío)
         if (!formData.name.trim()) {
@@ -72,9 +72,11 @@ export function FormsLogin() {
         <div className="flex flex-col items-center justify-center min-h-screen ">
 
             {successMessage && (
-                <h1 className="text-3xl font-bold text-green-600 mb-4">
-                    {successMessage}
-                </h1>
+                <div className="fixed top-20 right-10  p-4 shadow-md">
+                    <h1 className="text-3xl font-bold text-green-600 mb-4">
+                        {successMessage}
+                    </h1>
+                </div>
             )}
 
             <div className="w-full max-w-sm bg-white p-6 rounded-lg shadow-md">
